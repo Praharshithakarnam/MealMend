@@ -1,0 +1,257 @@
+
+.bot-reply {
+  --meal-ivory: #faf8f2;
+  --meal-sage: #426b4a;
+  --meal-sage-soft: #e8efe3;
+  --meal-terracotta: #a75f43;
+  --meal-text: #303c32;
+  --meal-muted: #6d776d;
+  --meal-border: #e7e4da;
+
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border: 1px solid var(--meal-border);
+  border-radius: 20px;
+  background: var(--meal-ivory);
+  color: var(--meal-text);
+  font-size: 13px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.recipe-reply {
+  padding: 14px;
+  border-color: #e0e6d9;
+  box-shadow: 0 3px 12px rgb(54 70 47 / 5%);
+}
+
+.recipe-topline {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--meal-border);
+}
+
+.recipe-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background: var(--meal-sage-soft);
+  font-size: 23px;
+}
+
+.recipe-eyebrow {
+  color: var(--meal-sage);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.recipe-subtitle {
+  margin-top: 2px;
+  color: var(--meal-muted);
+  font-size: 13px;
+}
+
+.bot-reply-content > :first-child {
+  margin-top: 0;
+}
+
+.bot-reply-content > :last-child {
+  margin-bottom: 0;
+}
+
+.reply-title {
+  margin: 0 0 8px;
+  color: #294b35;
+  font-size: 19px;
+  font-weight: 750;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+}
+
+.reply-heading {
+  margin: 16px 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--meal-border);
+  color: #294b35;
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.reply-heading {
+  margin: 16px 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--meal-border);
+  color: #294b35;
+  font-size: 15px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.reply-paragraph {
+  margin: 9px 0 14px;
+}
+
+.reply-strong {
+  color: #344f37;
+  font-weight: 700;
+}
+
+.reply-list {
+  display: grid;
+  gap: 6px;
+  padding-left: 0;
+  margin: 8px 0 12px;
+  list-style: none;
+}
+
+.reply-list li {
+  position: relative;
+  padding: 8px 10px 8px 30px;
+  border: 1px solid #e6e8de;
+  border-radius: 9px;
+  background: #fffefa;
+}
+
+.reply-list li::before {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  color: var(--meal-sage);
+  content: "✓";
+  font-weight: 800;
+}
+
+.reply-steps {
+  display: grid;
+  gap: 7px;
+  padding: 0;
+  margin: 8px 0 12px;
+  list-style: none;
+  counter-reset: recipe-step;
+}
+
+.reply-steps li {
+  position: relative;
+  min-height: 28px;
+  padding: 8px 10px 8px 42px;
+  border-radius: 9px;
+  background: #fffefa;
+  counter-increment: recipe-step;
+}
+
+.reply-steps li::before {
+  position: absolute;
+  top: 7px;
+  left: 8px;
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--meal-sage-soft);
+  color: var(--meal-sage);
+  content: counter(recipe-step, decimal-leading-zero);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.reply-divider {
+  height: 1px;
+  margin: 20px 0;
+  border: 0;
+  background: var(--meal-border);
+}
+
+.bot-reply-content a {
+  color: var(--meal-sage);
+  text-underline-offset: 3px;
+}
+
+.bot-reply-content code {
+  padding: 2px 5px;
+  border-radius: 5px;
+  background: #eeece4;
+  font-size: 0.9em;
+}
+
+@media (max-width: 600px) {
+  .bot-reply,
+  .recipe-reply {
+    padding: 15px;
+    border-radius: 16px;
+    font-size: 14px;
+  }
+
+  .reply-title {
+    font-size: 22px;
+  }
+
+  .reply-heading {
+    font-size: 17px;
+  }
+}
+
+
+/* Keep recipe replies compact inside the chat panel */
+.chat-bubble .bot-reply {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 12px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  border-radius: 12px;
+}
+
+.chat-bubble .recipe-reply {
+  padding: 12px;
+}
+
+.chat-bubble .recipe-topline {
+  gap: 8px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.chat-bubble .recipe-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.chat-bubble .recipe-eyebrow {
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.chat-bubble .recipe-subtitle {
+  font-size: 11px;
+}
+
+.chat-bubble .reply-title {
+  font-size: 17px;
+}
+
+.chat-bubble .reply-heading {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.chat-bubble .reply-paragraph {
+  margin: 6px 0 9px;
+}
+
+.chat-bubble .reply-list li,
+.chat-bubble .reply-steps li {
+  font-size: 12px;
+}
